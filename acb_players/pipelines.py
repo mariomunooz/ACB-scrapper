@@ -3,6 +3,9 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 
+# ADD HERE YOUR PASSWORD OF MYSQL WORKBENCH
+mysqlpassword = ''
+
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
@@ -14,7 +17,7 @@ class AcbPlayersPipeline:
         self.con = mysql.connector.connect(
             host = 'localhost',
             user = 'root',
-            passwd = 'mininet',
+            passwd = mysqlpassword,
             database = 'acbplayers'
         )
         self.cur = self.con.cursor()
